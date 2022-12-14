@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Contains all the details of the store"
+    columns:
+      - name: id
+        description: "unique key of this table"
+        tests:
+          - not_null
+      - name: first_name
+        description: "first name of the person"
+        tests:
+          - not_null
+      - name: last_name
+        description: "last name of the person"
+        tests:
+          - not_null
+
+  - name: dim_orders
+    description: "Contains all order details"
+    columns:
+      - name: id
+        description: "primary key of dim orders table"
+        tests:
+          - not_null
+      - name: user_id
+        description: "contains user id"
+        tests:
+          - not_null
+      - name: order_date
+        description: "contains order date of the product"
+        tests:
+          - not_null
+      - name: status
+        description: "gives the status of the product whether it is completed or returned"
+        tests:
+          - not_null
+
+  - name: dim_payments
+    description: "Contains all the details of the store"
+    columns:
+      - name: id
+        description: "primary key of this table"
+        tests:
+          - not_null
+      - name: order_id
+        description: "contains order id of this table"
+        tests:
+          - not_null
+      - name: payment_method
+        description: "contains the payment method"
+        tests:
+          - not_null
+      - name: amount
+        description: "contains the amount"
+        tests:
+          - not_null
